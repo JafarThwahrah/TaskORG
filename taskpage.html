@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+        <!-- emad - start -->
+
+
+		<!-- emad - end -->
+		</header>
+		<main>
+			<!-- laith - start - form -->
+      <div id="formDiv" class="container"><br>
+        <form action="" id="newTaskForm" class="container">
+        <div class="row">
+          <div class="col-6">
+            <label for="Title" class="form-label">Task title</label>
+            <input type="text" class="form-control" id="Title" name="Title" placeholder="Write a title for your task" required>
+            </div>
+            <div class="col-6">
+            <label for="Description" class="form-label">Task description</label>
+            <input type="text" class="form-control" id="Description" name="Description" placeholder="Enter a descriptionc(optional)">
+            </div>
+          </div><br>
+          <div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Radio" value="Critical" id="Radio1" required >
+            <label class="form-check-label red" for="Radio1" >Critical</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Radio" value="Normal"  id="Radio2" required>
+            <label class="form-check-label orange" for="Radio2">Normal</label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Radio" value="Low priority" id="Radio3">
+            <label class="form-check-label blue" for="Radio3" >Low priority</label>
+            </div>
+          </div><br>
+            <button type="submit" class="btn btn-primary" >Save</button>
+        </form><br>
+      </div>
+      <!-- laith - end - form -->
+
+    <!-- jafar - start - dropdowns -->
+
+      
+
+<!-- second filter srart here dropdowns -->
+  
+   
+ 
+<select class="form-select dropdown" aria-label="Default select example" onChange="getStatus(this);">
+  <option value="1">Completed</option>
+ <option value="2">incomplete</option>
+ <option class ="dropdown-header" value="" disabled selected>Select status</option>
+</select>
+
+<select class="form-select dropdown" aria-label="Default select example" onChange="getPriority(this);">
+  <option value="1">Critical</option>
+ <option value="2">Normal</option>
+ <option value="3">Low priority</option>  <option class=" dropdown-header" value="" disabled selected>Select priority</option>
+
+</select>
+			<!-- duaa - start - saved task -->
+			<section id="cards-container">
+        <h3>Your Tasks</h3>
+				<div class="container p-5" id="cards">
+					<div class="row g-4" id="card-row"></div>
+				</div>
+				<button id="delete-all" class="fill">Delete all</button>
+				<button id="delete-all-com" class="fill">Delete completed</button>
+			</section>
+			<!-- duaa - end - saved task -->
+		</main>
+		<footer>
+			<!-- emad - start -->
+			<!-- emad - end -->
+
+
+
+    
+    </main>
+   
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+	<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+	crossorigin="anonymous"
+  ></script>
+    <script src="./app2.js"></script>
+  </body>
+</html>

@@ -1,0 +1,550 @@
+/* emad */
+
+/* jafar */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+	font-family: "Poppins", "sans-serif";
+	box-sizing: border-box;
+}
+
+/* hero Section Start here*/
+
+/* https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80 */
+/* https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80 */
+/* https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80 */
+/* https://view.com/sites/default/files/image_crop_hero/solutions-commercial-office-hero-image-netflix-DESKTOP-LARGE.jpg */
+/* https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80 */
+
+header {
+	width: 100%;
+	height: 50px;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	position: absolute;
+}
+
+a {
+	text-decoration: none;
+}
+
+.navbar {
+	display: flex;
+	width: 100%;
+	height: 50px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 50px 0px 80px;
+	background: rgba(255, 255, 255, 0.24);
+	backdrop-filter: blur(7px);
+}
+.logo {
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.navbar .menubar span {
+	color: #fff;
+	font-size: 22px;
+	cursor: pointer;
+	display: none;
+}
+#click {
+	display: none;
+}
+.navbar ul {
+	display: flex;
+}
+.navbar ul li {
+	margin-left: 30px;
+	font-size: 1.063rem;
+	list-style: none;
+}
+.navbar ul a li {
+	color: white;
+	position: relative;
+}
+.navbar ul a li::after {
+	content: "";
+	width: 0;
+	height: 3px;
+	position: absolute;
+	bottom: -7px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: black;
+	border-radius: 15px;
+	transition: width 0.3s;
+}
+.navbar ul a li:hover {
+	color: black;
+}
+.navbar ul a li:hover::after {
+	color: white;
+	width: 100%;
+}
+
+.heroSection {
+	color: white;
+	height: 100vh;
+	width: auto;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		url("https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80");
+	background-size: cover;
+	display: flex;
+	background-attachment: fixed;
+	background-position: center;
+	flex-wrap: wrap;
+	animation: shrink 1.5s;
+}
+
+.headingAndDescription {
+	margin-left: 5rem;
+	animation: fadeIn 2.5s;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	justify-content: center;
+}
+.callToActionButton {
+	margin: 1rem;
+	width: 15rem;
+	height: 3rem;
+	font-size: larger;
+	font-weight: bold;
+	animation: fadeIn 2.5s;
+}
+
+.callToActionButton:hover {
+	/* box-shadow: #fff; */
+	box-shadow: 0 0 15px 5px rgba(255, 255, 255, 1);
+}
+
+.heroHeading {
+	margin: 1rem;
+	margin-bottom: 1.5rem;
+	animation: fadeIn 2.5s;
+	font-weight: 700;
+}
+.heroDescription {
+	max-width: 50rem;
+	margin: 1rem;
+	line-height: 2.8rem;
+	animation: fadeIn 2.5s;
+}
+
+/* hero Section End here*/
+
+/* Dropdown Start here*/
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin: 2rem;
+	width: 300px;
+	height: 60px;
+}
+
+.dropdown::before {
+	content: "";
+	position: absolute;
+	right: 20px;
+	top: 25px;
+	z-index: 2;
+	width: 8px;
+	height: 8px;
+	border: 2px solid #333;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	transform: rotate(-45deg);
+	transition: 0.5s;
+	pointer-events: none;
+}
+
+.dropdown.active::before {
+	top: 28px;
+	transform: rotate(-225deg);
+}
+
+.dropdown input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	background: #fff;
+	border: none;
+	outline: none;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+	padding: 12px 20px;
+	border-radius: 10px;
+}
+
+.dropdown .options {
+	position: absolute;
+	top: 80px;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	overflow: hidden;
+	display: none;
+	z-index: 5;
+	animation: fadeIn 0.5s;
+}
+
+.dropdown .options div {
+	padding: 12px 20px;
+	cursor: pointer;
+}
+
+.dropdown .options div:hover {
+	background: #62baea;
+	color: #fff;
+}
+
+.dropdown.active .options {
+	display: block;
+}
+
+.dropdown-header {
+	text-align: center;
+	font-size: large;
+	font-weight: bolder;
+	padding: 1rem;
+	text-align: center;
+}
+
+/* Dropdown End here*/
+
+/* hero animation start here */
+
+@keyframes shrink {
+	from {
+		transform: scale(2);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-2em);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeout {
+	from {
+		opacity: 0;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(2em);
+	}
+}
+
+hr {
+	margin: 0;
+}
+/* hero animation End here */
+
+/* Jafar End */
+
+/* manar */
+
+.registerContainer {
+	/* margin: 0;
+	padding: 0; */
+	width: 450px;
+	height: 600px;
+	justify-content: center;
+	align-items: center;
+	/* min-height: 100vh; */
+	font-family: "Jost", sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px thistle;
+}
+
+#check {
+	display: none;
+}
+
+.signup {
+	position: relative;
+	/* height: 150px;
+	width: 300px; */
+	justify-content: center;
+}
+
+#signLab,
+.label {
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.5s ease-in-out;
+}
+
+/* .inputDesign{
+	position: relative;
+	font-size: 14px;
+	padding: 20px;
+	margin: 5px;
+
+} */
+.regInput {
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	/* background: rgba(0, 128, 0, 0.347); */
+	/* background: rgba(220, 20, 60, 0.21); */
+	/* appearance: none; */
+	outline: none;
+	border-radius: 5px;
+	/* font-size: 14px; */
+}
+/* /////////////////////////////////////////////////// */
+/* .regInput:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control.success .regInput {
+	border-color: #2ecc71;
+}
+
+.form-control.error .regInput {
+	border-color: #e74c3c;
+}
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+	display: none;
+}
+
+.form-control.error small {
+	visibility: visible;
+} */
+/* ///////////////////////////////////////// */
+.regBtn {
+	color: #090909;
+	padding: 1em 2em;
+	font-size: 18px;
+	width: 80%;
+	height: 40px;
+	line-height: 1px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	border-radius: 300px;
+	background: #e8e8e8;
+	border: 2px solid #e8e8e8;
+	transition: all 0.3s ease-in;
+	cursor: pointer;
+	box-shadow: 2px 2px 6px #c5c5c5, -1px -2px 6px #fff;
+}
+
+.regBtn:hover {
+	box-shadow: -1px -1px 2px #c5c5c5, 3px 3px 3px #fff;
+}
+
+.login {
+	height: 560px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-350px);
+	transition: 0.8s ease-in-out;
+}
+
+#logLab {
+	color: #573b8a;
+	transform: scale(0.9);
+}
+
+#check:checked ~ .login {
+	transform: translateY(0px);
+}
+
+#check:checked ~ #logLab {
+	transform: scale(1.5);
+}
+
+#check:checked ~ #signLab {
+	transform: scale(6);
+}
+
+/* laith */
+#formDiv {
+	border: 2px solid;
+	border-radius: 20px;
+	/* box-shadow: 20px 20px 50px 10px rgba(73, 123, 150, 0.116) inset; */
+}
+
+.red {
+	color: hsl(0, 78%, 62%);
+	font-weight: bolder;
+}
+
+.orange {
+	color: hsl(34, 97%, 64%);
+	font-weight: 600;
+}
+
+.blue {
+	color: hsl(212, 86%, 64%);
+}
+
+/* duaa */
+
+#cards-container h3 {
+	position: relative;
+	width: fit-content;
+	margin: 0 auto;
+}
+#cards-container h3::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 1.5px;
+	background-color: #be7384;
+	/* transform: translateX(-50%) scaleX(0); */
+	transform-origin: 50% 50%;
+	transition: all 0.3s;
+}
+#cards-container h3:hover::after {
+	transform: translateX(-50%) scaleX(2);
+	background-color: #734b54;
+}
+#cards-container #cards {
+	overflow-y: scroll;
+	max-height: 70vh;
+}
+
+#cards-container h1:first-of-type {
+	font-weight: 200;
+	color: hsl(234, 12%, 34%);
+}
+
+#cards-container h1:last-of-type {
+	color: hsl(234, 12%, 34%);
+}
+
+@media (max-width: 400px) {
+	#cards-container h1 {
+		font-size: 1.5rem;
+	}
+}
+
+#cards-container .header {
+	text-align: center;
+	line-height: 0.8;
+	margin-bottom: 50px;
+	margin-top: 100px;
+}
+
+#cards-container .header p {
+	margin: 0 auto;
+	line-height: 2;
+	color: hsl(229, 6%, 66%);
+}
+
+#cards-container .box p {
+	color: hsl(229, 6%, 66%);
+}
+
+#cards-container .box {
+	border-radius: 5px;
+	box-shadow: 0px 30px 40px -20px hsl(229, 6%, 66%);
+	padding: 30px;
+	margin: 20px;
+	position: relative;
+	height: fit-content;
+}
+#cards-container .delete-btn img {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	width: 23px !important;
+}
+
+#cards-container .check-btn {
+	transform: scale(1.8);
+	accent-color: rgb(89, 161, 89);
+	border-radius: 50%;
+}
+
+#cards-container .red {
+	border-top: 3.5px solid hsl(0, 78%, 62%);
+}
+#cards-container .blue {
+	border-top: 3.5px solid hsl(212, 86%, 64%);
+}
+#cards-container .orange {
+	border-top: 3.5px solid hsl(34, 97%, 64%);
+}
+
+#cards-container h2 {
+	color: hsl(234, 12%, 34%);
+	font-weight: 600;
+}
+
+#cards-container .fill {
+	font-size: 14px;
+	font-weight: 200;
+	letter-spacing: 1px;
+	padding: 10px 40px 10px;
+	outline: 0;
+	border: 1px solid black;
+	cursor: pointer;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0);
+	margin: 30px;
+	float: right;
+}
+
+#cards-container .fill::after {
+	content: "";
+	background-color: #ff4c4c;
+	width: 100%;
+	z-index: -1;
+	position: absolute;
+	height: 100%;
+	top: 7px;
+	left: 7px;
+	transition: 0.2s;
+}
+
+#cards-container .fill:hover::after {
+	top: 0px;
+	left: 0px;
+}
